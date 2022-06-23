@@ -17,7 +17,7 @@ internal static class Program
 
         var result = (from keyValuePair in solutionDetail
                       let matchedPair = answerDetail.FirstOrDefault(c => c.Key == keyValuePair.Key)
-                      where string.Equals(keyValuePair.Value.ToString(), matchedPair.Value, StringComparison.CurrentCultureIgnoreCase)
+                      where string.Equals(keyValuePair.Value, matchedPair.Value, StringComparison.CurrentCultureIgnoreCase)
                       select keyValuePair).Count();
 
         Console.WriteLine("Match value between 2 JSON Array \nResult: ");
